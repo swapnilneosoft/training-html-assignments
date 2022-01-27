@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 9</title>
+</head>
+<body>
+    <div id="interval">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+         Fuga, quos vitae. Quos accusantium, iste laborum maxime iusto pariatur.
+          Natus ab vitae odit suscipit distinctio, blanditiis provident commodi sint
+           porro a?
+    </div>
+    <script src="../jQuery/lib/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            setInterval(() => {
+                $('#interval').css("color","red")
+            }, 500);
+
+            setInterval(() => {
+                $('#interval').css("color","yellow")
+            }, 1000);
+
+            setTimeout(() => {
+                alert("time out !")
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

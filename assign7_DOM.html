@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment : DOM </title>
+</head>
+<body>
+    <h1>
+        Removing Child 
+    </h1>
+    <ul id="rmChild">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <button id="rmBttn">Remove Child</button>
+
+    <ul id="rplChild">
+        <li>12</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <button id="rplBttn">Replace Child</button>
+
+
+    <script>
+        const rmBttn = document.getElementById("rmBttn")
+        rmBttn.addEventListener("click",()=>{            
+            const rmList = document.getElementById("rmChild");
+            rmList.removeChild(rmList.childNodes[0])
+        })
+
+        const rplBttn = document.getElementById("rplBttn");
+        rplBttn.addEventListener("click",()=>{
+            const rplList = document.getElementById("rplChild");
+            const childNodeLength = rplList.children.length;
+
+            const position = prompt("enter the postion of the node where to be insert (position should be less than :"+childNodeLength+") :")
+            if(position)
+            {
+                const valueList = prompt("Enter the value for position "+ position)
+                if(valueList)
+                {
+                    new_node = document.createTextNode(valueList);
+                    rplList.replaceChild(new_node,rplList.childNodes[position]);
+                } else{
+                    alert("you have not enetred value")
+                }
+
+            }else{
+                alert("you have not entered postion")
+            }
+        })
+
+        //optional
+        rplBttn.addEventListener("mouseleave",e=>{
+        // const new_node =  document.createTextNode("Fan");
+        // const item = document.getElementById("rplChild").childNodes[0];
+
+        // item.replaceChild(new_node,item.hasChildNodes[0])
+
+        var textnode = document.createTextNode("Water");
+        var item = document.getElementById("rplChild").childNodes[0];
+        item.replaceChild(textnode, item.childNodes[0]);
+
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js functions</title>
+</head>
+<body>
+
+    <h1>Fade to :</h1>
+    <p id="fadePara">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quae similique impedit
+         magni earum nisi aspernatur quos molestiae rerum, saepe iure autem omnis id
+          architecto aliquam aliquid exercitationem odio. Mollitia?
+    </p>
+    <button id="fadeBtn">Fade To </button>
+
+    <h2>Key Up Down event</h2>
+    <div>
+        <input type="text" id="keyUpInp">
+        <p id="keyUpPara">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
+            incidunt tempore perferendis doloremque vero. Cupiditate, facilis officiis
+             eligendi corporis id eos dolores aliquid aspernatur illum. Cupiditate vero porro
+             doloribus consequatur?</p>
+    </div>
+    <h2>Focus event</h2>
+    <div>
+        <input type="text" id="focusInp">
+        <p id="focusPara">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
+             incidunt tempore perferendis doloremque vero. Cupiditate, facilis officiis
+              eligendi corporis id eos dolores aliquid aspernatur illum. Cupiditate vero porro
+              doloribus consequatur?</p>
+    </div>
+
+    <script src="../../HTML/jQuery/lib/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#fadeBtn').click(function(){
+                $('#fadePara').fadeTo(1000,0.5)
+            });
+
+            $('#keyUpInp').keyup(function(){
+                $('#keyUpPara').css("background-color","pink");
+            });
+
+            $('#keyUpInp').keydown(function(){
+                $('#keyUpPara').css("background-color","yellow");
+            });
+
+            $('#focusInp').focus(function(){
+                $('#focusPara').css("color","purple")
+            });
+            $('#focusInp').focusout(function(){
+                $('#focusPara').css("color","black")
+            });
+        });
+    </script>
+</body>
+</html>
